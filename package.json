@@ -1,0 +1,28 @@
+{
+  "name": "red-contrib-tankerkoenig",
+  "version": "0.0.1",
+  "description": "Node-Red Tankerkoenig node for recieving petrol prices",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HendrikRoth/node-red-contrib-tankerkoenig.git"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "author": "Hendrik Roth <hi@hendrikroth.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HendrikRoth/node-red-contrib-tankerkoenig/issues"
+  },
+  "homepage": "https://github.com/HendrikRoth/node-red-contrib-tankerkoenig#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  },
+  "node-red": {
+	"nodes": {
+		"tankerkoenig": "tankerkoenig.js"
+	}
+  }
+}
