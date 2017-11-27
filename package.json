@@ -1,5 +1,5 @@
 {
-  "name": "red-contrib-tankerkoenig",
+  "name": "node-red-contrib-tankerkoenig",
   "version": "0.0.2",
   "description": "Node-Red Tankerkoenig node for recieving petrol prices",
   "main": "index.js",
