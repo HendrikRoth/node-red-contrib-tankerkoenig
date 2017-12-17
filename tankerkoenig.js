@@ -26,14 +26,18 @@ module.exports = function(RED) {
 		self.on('input', function(msg) {
 			var l = locations[n.location].config
 			request('https://creativecommons.tankerkoenig.de/json/list.php?lat='+ l.latitude +'&lng='+ l.longitude +'8&rad='+ l.radius +'&sort=dist&type='+ l.petroltype +'&apikey='+ l.key, function(error, response, body) {
-				var resp = JSON.parse(body)
-				if (error) {
-					self.error(error)
-				} else if (resp.status === 'error') {
-					self.error(resp.message)
-				} else {
-					msg.payload = resp.stations.slice(0, 10)
-					self.send(msg)
+				try {
+					var resp = JSON.parse(body)
+					if (error) {
+						self.error(error)
+					} else if (resp.status === 'error') {
+						self.error(resp.message)
+					} else {
+						msg.payload = resp.stations.slice(0, 10)
+						self.send(msg)
+					}
+				} catch(error) {
+						self.error(error)
 				}
 			})
 		})
