@@ -1,7 +1,9 @@
 # node-red-contrib-tankerkoenig
 Node-RED node to receive actual petrol prices (Tankerkoenig.de/Tankerkönig api).
 
-Node-RED Knoten zum Abruf der Kraftstoffpreise (Tankerkoenig.de/Tankerkönig api).  
+**Remark:**: Only valid for filling stations in Germany.
+
+Node-RED Knoten zum Abruf der Kraftstoffpreise (Tankerkoenig.de/Tankerkönig api) für Tankstellen in Deutschland.  
 Es werden die Preise E5, E10 und Diesel in einem Umkreis zum Zielort ermittelt und ausgegeben.
 
 **Hinweis:** Es ist eine vorherige Registrierung bei tankerkoenig.de notwendig, um einen persönlichen API-Key für den Zugriff auf die Preisinformationen zu erhalten.
