@@ -1,7 +1,7 @@
 {
   "name": "node-red-contrib-tankerkoenig",
-  "version": "0.0.3",
-  "description": "Node-Red Tankerkoenig node for recieving petrol prices",
+  "version": "0.1.0",
+  "description": "Node-RED Tankerkoenig node for recieving petrol prices",
   "main": "index.js",
   "scripts": {},
   "repository": {
