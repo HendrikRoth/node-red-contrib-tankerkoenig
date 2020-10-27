@@ -86,6 +86,7 @@
 	})
 </script>
 
+
 <script type='text/x-red' data-template-name='tankerkoenig'>
 	<div class='form-row'>
 		<label for='node-input-name'><i class='fa fa-tag'></i> Name</label>
@@ -96,3 +97,45 @@
 		<input type='text' id='node-input-location'/>
 	</div>
 </script>
+
+
+<script type="text/x-red" data-help-name="tankerkoenig">
+  <p>Node-RED node to receive actual petrol prices.</p>
+
+  <h3>Input</h3>
+  <dl class="message-properties">
+      <dt class="optioinal">payload
+          <span class="property-type">any</span>
+      </dt>
+      <dd> initiates execution </dd>
+  </dl>
+
+
+  <h3>Outputs</h3>
+   <dl class="message-properties">
+       <dt>payload <span class="property-type">array[]</span></dt>
+       <dd>The standard output of the node. The data of the <b>filling stations</b> are given in the array elements.</dd>
+   </dl>
+
+
+  <h3>Output <code>msg.payload</code> details</h3>
+    <p><code>msg.payload</code> is used as the payload of the published message.
+      It contains the following attributes in every array element:</p>
+      <p>
+       <ul>
+         <li><code>msg.payload.name</code> - description of the station location</li>
+         <li><code>msg.payload.brand</code> - company name</li>
+         <li><code>msg.payload.postCode</code>, <code>msg.payload.place</code>, <code>msg.payload.street</code>, <code>msg.payload.housenumber</code> - address of filling station</li>
+         <li><code>msg.payload.lat</code>, <code>msg.payload.lng</code> - position of the filling station</li>
+         <li><code>msg.payload.dist</code> - distance of the filling station to the given search position</li>
+         <li><code>msg.payload.isOpen</code> - 'true' = opened, 'false' = closed </li>
+         <li><code>msg.payload.price</code>, <code>msg.payload.e5</code>, <code>msg.payload.e10</code>, <code>msg.payload.diesel</code> - price output in EURO</li>
+       </ul>
+      </p>
+
+
+  <h3>References</h3>
+     <ul>
+       <li><a href="https://creativecommons.tankerkoenig.de/">Tankerkoenig api reference description</a> </li>
+     </ul>
+ </script>
