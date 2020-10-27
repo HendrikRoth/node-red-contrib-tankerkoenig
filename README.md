@@ -1,15 +1,15 @@
 # node-red-contrib-tankerkoenig
 Node-RED node to receive actual petrol prices (Tankerkoenig.de/Tankerkönig api).
 
-**Remark:**: Only valid for filling stations in Germany.
+**Remark:** Only valid for filling stations in Germany.
 
 Node-RED Knoten zum Abruf der Kraftstoffpreise (Tankerkoenig.de/Tankerkönig api) für Tankstellen in Deutschland.  
-Es werden die Preise E5, E10 und Diesel in einem Umkreis zum Zielort ermittelt und ausgegeben.
+Es werden die Preise E5, E10 und Diesel in einem Umkreis zum gewählten Zielort ermittelt und ausgegeben.
 
 **Hinweis:** Es ist eine vorherige Registrierung bei tankerkoenig.de notwendig, um einen persönlichen API-Key für den Zugriff auf die Preisinformationen zu erhalten.
 
 ![node-appearance](assets/node-appearance.png "Node appearance")  
-**Fig. 1:** Knotendarstellung
+**Fig. 1:** Node-Darstellung
 
 <a name="installation"></a>
 ## Installation
@@ -20,7 +20,7 @@ Es werden die Preise E5, E10 und Diesel in einem Umkreis zum Zielort ermittelt u
 
 <a name="installation_in_a_shell"></a>
 ### In einer Shell
-* Welchsel in das Node-RED Installationsverzeichnis, z.B.: `~/.node-red`
+* Wechsel in das Node-RED Installationsverzeichnis, z.B.: `~/.node-red`
 * Ausführen von `npm install node-red-contrib-tankerkoenig`
 
 <a name="usage"></a>
@@ -35,7 +35,7 @@ Im Beispiel wird der Node manuell getriggert, die Kraftstoff-Preisinformationen 
 
 
 ### Configuration Node
-Vor der Verwendung des Nodes ist ein ***tankerkoenig-config*** Node anzulegen.
+Vor der Verwendung des Nodes ist ein ***tankerkoenig-config*** Node anzulegen. Dies wird über die Auswahl *Add new tankerkoenig-config..* in der Node-Konfiguration initiiert.
 
 #### API-Key
 Zum Datenabruf wird ein sog. ***API-Key*** benötigt. Dieser ist ein individueller, persönlicher Key und kann auf der Seite <https://creativecommons.tankerkoenig.de/> beantragt werden.
@@ -57,7 +57,7 @@ In dem Pulldown-Feld ***Type*** werden die Kraftstoffsorten ausgewählt, deren P
 - E5
 - E10
 - Diesel
-- Alle drei Kraftstoffsorten
+- All: Alle drei Kraftstoffsorten
 
 
 <a name="node_configuration"></a>
@@ -70,11 +70,11 @@ Die Konfiguration des Nodes selber ist sehr einfach: Neben der Auswahl des *Conf
 
 
 ### Eingang
-Der Node wird durch irgeneine `msg` mit beliebigem Inhalt getriggert.  
+Der Node wird durch eine `msg` mit beliebigem Inhalt getriggert.  
 Weitere Eingangsdaten wertet der Node nicht aus.
 
 ### Ausgänge
-Der node gibt die gelesenen Kraftstoffdaten über `msg.payload` aus.
+Der Node gibt die gelesenen Kraftstoffdaten über `msg.payload` aus.
 
 ![node-output](assets/node-output.png "Node Ausgangsdaten")
 
@@ -82,7 +82,7 @@ Der node gibt die gelesenen Kraftstoffdaten über `msg.payload` aus.
 
 Für jede in der Umkreissuche gefundene Tankstelle wird ein Arrayelement innerhalb `msg.payload` mit folgenden Attributen angelegt:
 - `msg.payload[].name`, `msg.payload[].brand`: Gibt den **Namen** und die **Gesellschaft** der Tankstelle an.
-- `msg.payload[].postCode`, `msg.payload[].place`, `msg.payload[].street`, `msg.payload[].housenumber`: **Adresse** der Tankstelle.
+- `msg.payload[].postCode`, `msg.payload[].place`, `msg.payload[].street`, `msg.payload[].houseNumber`: **Adresse** der Tankstelle.
 - `msg.payload[].lat`, `msg.payload[].lng`, `msg.payload[].dist`: Gibt die **Position** der Tankstelle und deren **Entfernung zur Suchposition** (Positionsangabe aus dem Config Node) an.
 - `msg.payload[].isOpen`: Gibt an, ob die Tankstelle zum aktuellen Zeitpunkt **geöffnet** hat.  
   (*true*: geöffnet, *false*: geschlossen)
@@ -95,7 +95,7 @@ Für jede in der Umkreissuche gefundene Tankstelle wird ein Arrayelement innerha
 In Node-RED können sie mittels der Importfunktion mit Auswahl von *Examples* im vertikalen Tab-Menü automatisch importiert werden.
 ***
 
-Der Beispiel-Flow liest die Preise aller Kraftstoffsorten im Umkreis (1.5 km) von Baesweiler (NRW) ein und gibt die Daten aus.
+Der Beispiel-Flow liest die Preise aller Kraftstoffsorten im Umkreis (1.5 km) von Baesweiler (NRW) via der Tankerkönig-API ein und gibt die Daten aus.
 
 <img src="assets/simple-example.png" title="Einfaches Beispiel: Flow" width="600" />
 
