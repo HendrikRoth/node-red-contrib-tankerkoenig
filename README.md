@@ -103,6 +103,6 @@ Der Beispiel-Flow liest die Preise aller Kraftstoffsorten im Umkreis (1.5 km) vo
 
 **Fig. 6:** Einfaches Beispiel
 
-## Credentials
+## Credits
 - [hendrikroth](https://github.com/HendrikRoth)
 - [StephanStS](https://github.com/StephanStS)
